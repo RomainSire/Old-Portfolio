@@ -1,0 +1,26 @@
+<h1>Messages de contact</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Nom</td>
+      <td>Email</td>
+      <td>Message</td>
+      <td>Date</td>
+      <td>Supprimer</td>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($messages as $message): ?>
+      <tr>
+            <td><?= htmlspecialchars($message['name']); ?></td>
+            <td><?= htmlspecialchars($message['email']); ?></td>
+            <td><?= nl2br(htmlspecialchars($message['content'])); ?></td>
+            <td><?= htmlspecialchars($message['date']); ?></td>
+            <td>
+                <a href="messages-delete.php?id=<?= $message['id'] ?>&csrfToken=<?= $_SESSION["csrfToken"] ?>" title="supprimer"><i class="fas fa-trash"></i></a>
+            </td>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>

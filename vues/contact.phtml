@@ -1,0 +1,17 @@
+<section id="section-contact" class="section-contact">
+  <p>Vous avez des questions ? Une idée pour travailler ensemble ? N'hésitez pas à me contacter !</p>
+
+  <form action="contact.php" method="post">
+    <p>
+      <input type="text" name="name" required placeholder="Votre nom">
+    </p>
+    <p>
+      <input type="email" name="email" required placeholder="Votre email">
+    </p>
+    <p>
+      <textarea name="content" required placeholder="Votre message"></textarea>
+    </p>
+    <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+    <button type="submit" class="btn">Envoyer</button>
+  </form>
+</section>

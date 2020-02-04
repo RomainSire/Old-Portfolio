@@ -1,0 +1,44 @@
+<h1>Utilisateurs</h1>
+
+<!-- Partie pour ajouter un utilisateur -->
+<h2>Ajouter un nouvel utilisateur :</h2>
+<form action="<?= $baseUrl ?>/admin/users.php" method="post">
+  <input type="text" name="name" placeholder="Nom d'utilisateur" required>
+  <input type="password" name="password" placeholder="Mot de passe" required>
+  <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+  <button type="subbit">Ajouter</button>
+</form>
+
+<!-- Affichage dans un tableau de tous les utilisateurs -->
+<h2>Liste des utilisateurs :</h2>
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Editer le nom ET le mot de passe</td>
+      <td>Supprimer</td>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($users as $user): ?>
+      <tr>
+        <form action="<?= $baseUrl ?>/admin/users-edit.php" method="post">
+          <td><?= $user['id']; ?></td>
+          <td>
+            <!-- <a href="users-edit.php?id=" title="éditer"><i class="fas fa-edit"></i></a> -->
+            <input type="hidden" name="id" value="<?= $user['id'] ?>">
+            <input type="text" name="login" placeholder="Nom d'utilisateur" value="<?= $user['login'] ?>" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+            <button type="subbit">Éditer</button>
+
+          </td>
+          <td>
+            <a href="users-delete.php?id=<?= $user['id'] ?>&csrfToken=<?= $_SESSION["csrfToken"] ?>" title="supprimer"><i class="fas fa-trash"></i></a>
+          </td>
+        </form>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+

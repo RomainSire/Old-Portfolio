@@ -1,0 +1,28 @@
+<h1>Images</h1>
+
+<!-- Partie pour ajouter un utilisateur -->
+<h2>Ajouter des nouvelles images (Upload 100Mb max, 10 fichiers max..) :</h2>
+<form action="<?= $baseUrl ?>/admin/images.php" method="post" enctype="multipart/form-data"> <!-- encrypte : obligatoire pour envoi ed fichiers -->
+  <!-- MAX_FILE_SIZE définit la taille max de fichier -->
+  <input type="hidden" name="MAX_FILE_SIZE" value="100000000">
+  <input type="file" name="images[]" accept="image/png, image/jpeg" multiple> <!-- images[] pour avoir un tableau dans $_FILES -->
+  <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+  <button type="subbit">Ajouter</button>
+</form>
+
+<!-- Affichage toutes les images dans un flexbox -->
+<h2>Liste des images :</h2>
+<div class="images-wrapper">
+  <?php foreach ($images as $image): ?>
+    <figure>
+      <img src="<?= $baseUrl ?>/img/portfolio/<?= $image['filename'] ?>" alt="Image #<?= $image['id'] ?>">
+      <figcaption>
+        <a href="images-delete.php?id=<?= $image['id'] ?>&csrfToken=<?= $_SESSION["csrfToken"] ?>" title="supprimer">
+          <i class="fas fa-trash"></i>
+        </a>
+      </figcaption>
+    </figure>
+  <?php endforeach; ?>
+
+
+</div>

@@ -1,0 +1,41 @@
+<h1>Réalisations</h1>
+
+<!-- Partie pour ajouter une réalisation -->
+<h2>Ajouter une nouvelle réalisation :</h2>
+<a href="<?= $baseUrl ?>/admin/realisations-add.php" class="btn">Ajouter une réalisation</a>
+
+<!-- Affichage de toutes les réalisations -->
+<h2>Liste des réalisations :</h2>
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Photo principale</td>
+      <td>Titre</td>
+      <td>Editer</td>
+      <td>Supprimer</td>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($realisations as $realisation): ?>
+      <tr>
+          <td><?= $realisation['id']; ?></td>
+          <td>
+            <img src="<?= $baseUrl ?>/img/portfolio/<?=
+              // Test sur le nom de l'image : si défini on affiche l'image, si pas défini on affiche l'img par défaut
+              ($realisation['mainImageName']==""?"img-not-available.png":$realisation['mainImageName']);
+              ?>" alt="photo principale de la réalisation <?= $realisation['id']; ?>">
+          </td>
+          <td><?= $realisation['title']; ?></td>
+          <td>
+            <a href="<?= $baseUrl ?>/admin/realisations-edit.php?id=<?= $realisation['id'] ?>"  title="éditer" class="btn">Éditer</a>
+          </td>
+          <td>
+            <a href="<?= $baseUrl ?>/admin/realisations-delete.php?id=<?= $realisation['id'] ?>&csrfToken=<?= $_SESSION["csrfToken"] ?>" title="supprimer">
+              <i class="fas fa-trash"></i>
+            </a>
+          </td>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>

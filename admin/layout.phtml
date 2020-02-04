@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <!-- google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Squada+One" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- normalize -->
+    <link rel="stylesheet" href="<?= $baseUrl ?>/css/normalize.css">
+    <!-- feuille de css "admin" -->
+    <link rel="stylesheet" href="<?= $baseUrl ?>/css/admin.css">
+
+    <title>Portfolio | <?= $pageTitle ?></title>
+  </head>
+  <body>
+    <!-- FlashBag : message flash -->
+      <?php if ($flashMessage->hasMessages()): ?>
+        <?php foreach ($flashMessage->getMessages() as $message): ?>
+          <div class="flashMessage hidden">
+            <i class="fas fa-info-circle"></i> <?= $message ?>
+          </div>
+        <?php endforeach; ?>
+      <?php endif; ?>
+
+
+    <!-- ****************************************** -->
+    <!-- HEADER : logo, titre & logout              -->
+    <!-- ****************************************** -->
+    <header>
+      <a href="<?= $baseUrl ?>/index.php">
+        <div class="header-logos">
+          <img src="<?= $baseUrl ?>/img/logo.svg" alt="Logo du Portfolio">
+          <h1>Mon portfolio</h1>
+        </div>
+      </a>
+      <a href="<?= $baseUrl ?>/logout.php" class="btn">Log out</a>
+    </header>
+
+    <!-- ****************************************** -->
+    <!-- ASIDE : navigation                         -->
+    <!-- ****************************************** -->
+    <aside>
+      <nav>
+        <a href="<?= $baseUrl ?>/admin/index.php"
+          <?php if ($template == 'index.phtml'): ?>
+            class="active"
+          <?php endif; ?>>
+          <i class="fas fa-tachometer-alt"></i> Dashboard
+        </a>
+        <a href="<?= $baseUrl ?>/admin/users.php"
+          <?php if ($template == 'users.phtml'): ?>
+            class="active"
+          <?php endif; ?>>
+          <i class="fas fa-users"></i> Utilisateurs
+        </a>
+        <a href="<?= $baseUrl ?>/admin/categories.php"
+          <?php if ($template == 'categories.phtml'): ?>
+            class="active"
+          <?php endif; ?>>
+          <i class="fas fa-tags"></i> Catégories
+        </a>
+        <a href="<?= $baseUrl ?>/admin/images.php"
+          <?php if ($template == 'images.phtml'): ?>
+            class="active"
+          <?php endif; ?>>
+          <i class="fas fa-images"></i> Images
+        </a>
+        <a href="<?= $baseUrl ?>/admin/realisations.php"
+          <?php if ($template == 'realisations.phtml' || $template == "realisations-add.phtml" || $template == "realisations-edit.phtml"): ?>
+            class="active"
+          <?php endif; ?>>
+          <i class="fas fa-atom"></i> Réalisations
+        </a>
+        <a href="<?= $baseUrl ?>/admin/messages.php"
+          <?php if ($template == 'messages.phtml'): ?>
+            class="active"
+          <?php endif; ?>>
+          <i class="fas fa-envelope"></i> Messages
+        </a>
+      </nav>
+    </aside>
+
+
+    <!-- ****************************************** -->
+    <!-- MAIN                                       -->
+    <!-- ****************************************** -->
+
+    <main>
+
+
+
+      <!-- Inclure le contenu de la page -->
+      <?php include 'vues/' . $template; ?>
+
+
+
+
+    </main>
+
+
+
+
+
+    <!-- JS -->
+    <script src="<?= $baseUrl ?>/js/jquery-3.3.1.min.js"></script>
+    <script src="<?= $baseUrl ?>/js/events-admin.js"></script>
+    <script src="<?= $baseUrl ?>/js/main.js"></script>
+    </body>
+    </html>
+

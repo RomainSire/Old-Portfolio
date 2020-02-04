@@ -1,0 +1,61 @@
+<h1>Ajouter une réalisation</h1>
+
+<form action="<?= $baseUrl ?>/admin/realisations-add.php" method="post" class="realisation-edit">
+
+  <!-- TITRE -->
+  <p>
+    <label for="title">Titre de la réalisation</label>
+    <input type="text" name="title" id="title" required>
+  </p>
+
+  <!-- DESCRIPTION -->
+  <p>
+    <label for="description">Description</label>
+    <textarea name="description" id="description" required></textarea>
+  </p>
+
+  <!-- LIEN -->
+  <p>
+    <label for="link">Lien vers le site web (si disponible)</label>
+    <input type="url" name="link" id="link">
+  </p>
+
+  <!-- CATÉGORIES -->
+  <p>
+    <p>Catégories</p>
+    <div class="category-wrapper">
+      <?php foreach ($categories as $category): ?>
+        <p>
+          <input type="checkbox" name="categories[]" value="<?= $category['id'] ?>" id="<?= $category['id'] ?>">
+          <label for="<?= $category['id'] ?>"><?= $category['name'] ?></label>
+        </p>
+      <?php endforeach; ?>
+    </div>
+  </p>
+
+  <!-- IMAGES -->
+  <p>
+    <p>Images associées</p>
+    <div class="images-wrapper">
+      <?php foreach ($images as $image): ?>
+        <p data-filename="<?= $image['filename'] ?>">
+          <label for="image-<?= $image['id'] ?>">
+            <img src="<?= $baseUrl ?>/img/portfolio/<?= $image['filename'] ?>" alt="image-<?= $image['id'] ?>">
+          </label>
+          <input type="checkbox" name="images[]" value="<?= $image['id'] ?>" id="image-<?= $image['id'] ?>">
+          <button type="button" class="home-image-btn hidden"><i class="fas fa-home"></i></button>
+        </p>
+      <?php endforeach; ?>
+    </div>
+  </p>
+
+  <!-- IMAGE PRINCIPALE : champ caché, sera rempli avec JavaScript lors du click sur le bouton ".home-image-btn" -->
+  <input type="hidden" name="mainImageName" value="">
+
+  <!-- Protection contre CSRF -->
+  <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+
+  <!-- Bouton SUBMIN -->
+  <button type="submit">Ajouter</button>
+
+</form>

@@ -1,0 +1,32 @@
+<section id="section-portfolio" class="section-portfolio">
+  <div class="section-portfolio-wrapper">
+    <?php foreach ($realisations as $realisation): ?>
+      <figure data-id="<?= $realisation['id']; ?>">
+        <!-- Test sur le nom de l'image : si défini on affiche l'image, si pas défini on affiche l'img par défaut -->
+        <img
+          src="<?= $baseUrl ?>/img/portfolio/<?= ($realisation['mainImageName']==""?"img-not-available.png":$realisation['mainImageName']);?>"
+          alt="photo principale de la réalisation <?= $realisation['id']; ?>">
+          <figcaption><?= $realisation['title']; ?></figcaption>
+      </figure>
+    <?php endforeach; ?>
+  </div>
+
+  <!-- Slider "détail de réalisation" caché par défaut -->
+  <div class="section-portfolio-focus hidden">
+    <i class="fas fa-times-circle" id="portfolio-focus-close"></i>
+    <h2 id="portfolio-focus-title">Titre réalisation</h2>
+    <div class="slider" id="portfolio-focus-slider">
+      <img src="<?= $baseUrl ?>/img/portfolio/5d18a36bc06211433910752.png" alt="#" data-nb="">
+      <i class="fas fa-chevron-circle-left" id="portfolio-focus-left"></i>
+      <i class="fas fa-chevron-circle-right" id="portfolio-focus-right"></i>
+    </div>
+    <p  id="portfolio-focus-description">#</p>
+    <div class="categories"  id="portfolio-focus-categories">
+      <p>#</p>
+      <p>#</p>
+    </div>
+    <div id="portfolio-focus-link">
+      <a href="#" class="btn" target="_blank">Aller voir ce site web</a>
+    </div>
+  </div>
+</section>

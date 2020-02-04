@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
+    <!-- CSS -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Squada+One" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/css/normalize.css">
+    <link rel="stylesheet" href="<?= $baseUrl ?>/css/main.css">
+
+    <title>Portfolio de Romain Siré | <?= $pageTitle ?></title>
+  </head>
+  <body>
+
+
+<!-- FlashBag : message flash -->
+  <?php if ($flashMessage->hasMessages()): ?>
+    <?php foreach ($flashMessage->getMessages() as $message): ?>
+      <div class="flashMessage hidden">
+        <i class="fas fa-info-circle"></i> <?= $message ?>
+      </div>
+    <?php endforeach; ?>
+  <?php endif; ?>
+
+    <!-- ****************************************** -->
+    <!-- HEADER                                     -->
+    <!-- ****************************************** -->
+    <header>
+      <div class="header-wrapper">
+        <img src="<?= $baseUrl ?>/img/logo.svg" alt="Logo du Portfolio">
+        <div class="titles">
+          <h1>Romain Siré</h1>
+          <h2>Développeur & Intégrateur Web</h2>
+        </div>
+      </div>
+        <!-- Navigation -->
+        <nav>
+
+          <a href="<?= $baseUrl ?>/index.php"
+            <?php if ($template == "index.phtml"): ?>
+               class="active"
+            <?php endif; ?>>
+            À propos
+          </a>
+
+          <a href="<?= $baseUrl ?>/skills.php"
+            <?php if ($template == "skills.phtml"): ?>
+              class="active"
+            <?php endif; ?>>
+            Compétences
+          </a>
+
+          <a href="<?= $baseUrl ?>/realisations.php"
+            <?php if ($template == "realisations.phtml"): ?>
+              class="active"
+            <?php endif; ?>>
+            Réalisations
+          </a>
+
+          <a href="<?= $baseUrl ?>/contact.php"
+            <?php if ($template == "contact.phtml"): ?>
+              class="active"
+            <?php endif; ?>>
+            Contact
+          </a>
+
+        </nav>
+    </header>
+
+
+
+
+    <!-- ****************************************** -->
+    <!-- MAIN                                       -->
+    <!-- ****************************************** -->
+
+    <main class="max-width">
+
+
+
+      <!-- Inclure le contenu de la page -->
+      <?php include 'vues/' . $template; ?>
+
+
+
+
+    </main>
+
+
+
+    <!-- ****************************************** -->
+    <!-- FOOTER                                     -->
+    <!-- ****************************************** -->
+    <footer class="clear">
+      <div class="max-width">
+        <p>&copy; 2019 Romain Siré - <a href="<?= $baseUrl ?>">romainsire.com</a></p>
+        <a href="https://www.linkedin.com/in/romainsire/"  target="_blank"><img src="img/linkedin-logo.svg" alt="logo de LinkedIn"></a>
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="<?= $baseUrl ?>/js/jquery-3.3.1.min.js"></script>
+    <script src="<?= $baseUrl ?>/js/events-public.js"></script>
+    <script src="<?= $baseUrl ?>/js/main.js"></script>
+    </body>
+    </html>
+

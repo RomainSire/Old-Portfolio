@@ -1,0 +1,87 @@
+<h1>Éditer une réalisation</h1>
+
+<form action="<?= $baseUrl ?>/admin/realisations-edit.php" method="post" class="realisation-edit">
+  <!-- ID : champ caché -->
+  <input type="hidden" name="id" value="<?= $realisation['id'] ?>">
+
+  <!-- TITRE -->
+  <p>
+    <label for="title">Titre de la réalisation</label>
+    <input type="text" name="title" id="title" required value="<?= $realisation['title'] ?>">
+  </p>
+
+  <!-- DESCRIPTION -->
+  <p>
+    <label for="description">Description</label>
+    <textarea name="description" id="description" required><?= $realisation['description'] ?></textarea>
+  </p>
+
+  <!-- LIEN -->
+  <p>
+    <label for="link">Lien vers le site web (si disponible)</label>
+    <input type="url" name="link" id="link"  value="<?= $realisation['linkToWebsite'] ?>">
+  </p>
+
+  <!-- CATÉGORIES -->
+  <p>
+    <p>Catégories</p>
+    <div class="category-wrapper">
+      <?php foreach ($categories as $category): ?>
+        <p>
+          <input type="checkbox" name="categories[]" value="<?= $category['id'] ?>" id="<?= $category['id'] ?>"
+          <?php if (in_array($category['id'], $IDcategories)): // Si l'ID de la cat. en cours est inclue dans l'array' des catégorie de la réal.?>
+            checked
+          <?php endif; ?>
+          >
+          <label for="<?= $category['id'] ?>"><?= $category['name'] ?></label>
+        </p>
+      <?php endforeach; ?>
+    </div>
+  </p>
+
+  <!-- IMAGES -->
+  <p>
+    <p>Images associées</p>
+    <div class="images-wrapper">
+      <?php foreach ($images as $image): ?>
+        <p data-filename="<?= $image['filename'] ?>" class="
+          <?php if (in_array($image['id'], $IDimages)): // Si l'ID de l'img. en cours est inclue dans l'array' des images de la réal. ?>
+            selected
+          <?php endif; ?>
+          <?php if ($realisation['mainImageName'] == $image['filename']): ?>
+            selected-and-main
+          <?php endif; ?>
+        ">
+          <label for="image-<?= $image['id'] ?>">
+            <img src="<?= $baseUrl ?>/img/portfolio/<?= $image['filename'] ?>" alt="image-<?= $image['id'] ?>">
+          </label>
+          <input type="checkbox" name="images[]" value="<?= $image['id'] ?>" id="image-<?= $image['id'] ?>"
+          <?php if (in_array($image['id'], $IDimages)): // idem ?>
+            checked
+          <?php endif; ?>
+          >
+          <button type="button" class="
+            <?php if (in_array($image['id'], $IDimages)): // presque idem, avec un else cette fois.. ?>
+              home-image-btn
+            <?php else: ?>
+              home-image-btn hidden
+            <?php endif; ?>
+            <?php if ($realisation['mainImageName'] == $image['filename']): ?>
+              home-image-btn-main
+            <?php endif; ?>
+          "><i class="fas fa-home"></i></button>
+        </p>
+      <?php endforeach; ?>
+    </div>
+  </p>
+
+  <!-- IMAGE PRINCIPALE : champ caché, sera rempli avec JavaScript lors du click sur le bouton ".home-image-btn" -->
+  <input type="hidden" name="mainImageName" value="<?= $realisation['mainImageName'] ?>">
+
+  <!-- Protection contre CSRF -->
+  <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+
+  <!-- Bouton SUBMIT -->
+  <button type="submit">Enregistrer les modifications</button>
+
+</form>

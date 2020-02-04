@@ -1,0 +1,296 @@
+/* UTILITIES */
+* {
+  box-sizing: border-box;
+}
+.hidden {
+  display: none;
+}
+
+/* GENERAL & FONTS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #444;
+}
+a {
+  text-decoration: none;
+  outline-style: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Squada One', cursive;
+}
+h2 {
+  margin-top: 20px;
+}
+
+/* MESSAGES FLASH */
+.flashMessage {
+  position: fixed;
+  z-index: 200;
+  left: 10%;
+  right: 10%;
+  top: 25%;
+  background: #5aade2;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 3em;
+  text-align: center;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #333;
+}
+
+/* HEADER */
+header {
+  background: #444;
+  color: #ddd;
+  text-align: center;
+}
+header a {
+  color: inherit;
+}
+header a:hover {
+  text-decoration: none;
+}
+.header-logos {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px;
+  transition: all 0.3s;
+}
+.header-logos:hover {
+  transform: scale(1.05);
+}
+header .btn {
+  display: block;
+  padding: 5px 20px;
+  background: #888;
+  color: #ddd;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+header .btn:hover {
+  text-decoration: none;
+  background: #ccc;
+  color: #333;
+}
+
+/* ASIDE : NAVIGATION */
+aside {
+  padding-top: 10px;
+  background: #eee;
+}
+aside a {
+  display: block;
+  padding: 0 20px;
+  color: #333;
+  transition: all 0.3s;
+}
+aside a:hover {
+  text-decoration: none;
+  margin-left: 10px;
+}
+aside a.active {
+  margin-left: 10px;
+  font-weight: bolder;
+  color: #000;
+}
+
+/* MAIN */
+main {
+  padding: 10px;
+}
+
+input, button, textarea {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+}
+button, .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  background: #888;
+  color: #ddd;
+  transition: all 0.3s;
+}
+button:hover, .btn:hover {
+  background: #ccc;
+  color: #333;
+  text-decoration: none;
+}
+
+/* Mise en forme des différents tableaux de la partie Admin */
+table {
+  border-collapse:collapse;
+  margin: 30px 0;
+}
+table td {
+  padding: 3px 20px;
+  text-align: center;
+}
+table thead {
+  font-weight: bold;
+  border-bottom: 1px solid #333;
+}
+table tbody tr:nth-of-type(2n) {
+  background: #eee;
+}
+table tbody tr:nth-of-type(2n+1) {
+  background: #F8F8F8;
+}
+.fa-trash {
+  color: #ef4f4f;
+}
+table img {
+  width: 200px;
+}
+
+/* IMAGES : page "images.phtml" */
+.images-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.images-wrapper figure {
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px #888;
+  margin: 10px;
+  position: relative;
+}
+.images-wrapper img {
+  width: 285px;
+}
+.images-wrapper figcaption {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+/* REALISATIONS EDIT : pages realisations-add.phtml et realisations-edit.phtml */
+.realisation-edit label {
+  display: block;
+}
+.realisation-edit input, .realisation-edit textarea {
+  width: 100%;
+}
+.realisation-edit textarea {
+  height: 10em;
+}
+/* Pour les catégories : */
+.realisation-edit .category-wrapper {
+  border: 1px solid #ccc;
+  padding: 20px;
+  max-height: 150px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: inset 0 0 10px #bbb8;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.realisation-edit .category-wrapper p {
+  margin: 5px;
+  width: 200px;
+}
+.realisation-edit .category-wrapper input {
+  width: auto;
+}
+.realisation-edit .category-wrapper label {
+  display: inline;
+}
+/* Pour les images : */
+.realisation-edit .images-wrapper {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  box-shadow: inset 0 0 10px #bbb8;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+.realisation-edit .images-wrapper p {
+  position: relative;
+  margin: 9px;
+  border: 1px solid #ccc;
+}
+.realisation-edit .images-wrapper p.selected {
+  margin: 5px;
+  border: 5px solid #5aade2;
+}
+.realisation-edit .images-wrapper p.selected-and-main{
+  margin: 5px;
+  border: 5px solid #ef4f4f;
+}
+.realisation-edit .images-wrapper input {
+  /* display: none; */
+  position: absolute;
+  bottom: 10px;
+}
+.realisation-edit .images-wrapper .home-image-btn {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: #5aade2;
+  border: none;
+}
+.realisation-edit .images-wrapper .home-image-btn-main {
+  background: #ef4f4f;
+}
+
+
+
+/* -------------------------------------------*/
+/*      RESPONSIVE : TABLETTES & DESKTOP      */
+/* -------------------------------------------*/
+@media screen and (min-width: 500px) {
+  /* HEADER */
+  header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 80px;
+  }
+  header .btn {
+    margin-right: 20px;
+  }
+  /* ASIDE / NAVIGATION */
+  aside {
+    position: fixed;
+    top: 80px;
+    left: 0;
+    bottom: 0;
+    width: 200px;
+  }
+  /* MAIN */
+  body {
+    /* margins sur le body pour compenser les dimensions du header et du aside qui sont en position absolute */
+    margin-top: 80px;
+    margin-left: 200px;
+  }
+
+
+}
+

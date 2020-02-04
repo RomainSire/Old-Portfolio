@@ -1,0 +1,39 @@
+<h1>Catégories</h1>
+<!-- Partie pour ajouter une catégorie-->
+<h2>Ajouter une nouvelle catégorie :</h2>
+<form action="<?= $baseUrl ?>/admin/categories.php" method="post">
+  <input type="text" name="name" placeholder="Nom de la catégorie" required>
+  <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+  <button type="subbit">Ajouter</button>
+</form>
+
+<!-- Affichage dans un tableau de toutes les catégories -->
+<h2>Liste des catégories :</h2>
+<table>
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Editer les catégories</td>
+      <td>Supprimer</td>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($categories as $categorie): ?>
+      <tr>
+        <form action="<?= $baseUrl ?>/admin/categories-edit.php" method="post">
+          <td><?= $categorie['id']; ?></td>
+          <td>
+            <input type="hidden" name="id" value="<?= $categorie['id'] ?>">
+            <input type="text" name="name" placeholder="Nom de la catégorie" value="<?= $categorie['name'] ?>" required>
+            <input type="hidden" name="csrfToken" value="<?= $_SESSION["csrfToken"] ?>">
+            <button type="subbit">Éditer</button>
+          </td>
+          <td>
+            <a href="categories-delete.php?id=<?= $categorie['id'] ?>&csrfToken=<?= $_SESSION["csrfToken"] ?>" title="supprimer"><i class="fas fa-trash"></i></a>
+          </td>
+        </form>
+      </tr>
+    <?php endforeach; ?>
+  </tbody>
+</table>
+

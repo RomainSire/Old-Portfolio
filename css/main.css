@@ -1,0 +1,479 @@
+/* UTILITIES */
+* {
+  box-sizing: border-box;
+}
+.max-width {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+.clear {
+  clear: both;
+}
+.hidden {
+  display: none;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* GENERAL & FONTS */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  line-height: 1.6em;
+  color: #444;
+}
+a {
+  text-decoration: none;
+  outline-style: none;
+  color: #69ce87;
+}
+a:hover {
+  text-decoration: underline;
+}
+h1, h2, h3, h4 {
+  margin: 0;
+  font-weight: normal;
+  font-family: 'Squada One', cursive;
+}
+.btn {
+  display: block;
+  padding: 10px 30px;
+  margin: 5px auto;
+  width: 250px;
+  background-color: #69ce8766;
+  text-align: center;
+  color: #444;
+  border: none;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.btn:hover {
+  text-decoration: none;
+  background-color: #69ce87cc;
+  box-shadow: 0 0 20px #aaa;
+}
+
+/* MESSAGES FLASH */
+.flashMessage {
+  position: fixed;
+  z-index: 200;
+  left: 10%;
+  right: 10%;
+  top: 25%;
+  background: #5aade2;
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 3em;
+  text-align: center;
+  border: 3px solid #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #333;
+}
+
+/* HEADER */
+header {
+  background: url('../img/bg-leaves.jpg') center / cover no-repeat;
+  text-align: center;
+  color: #ddd;
+}
+.header-wrapper {
+  padding: 30px;
+}
+header img {
+  width: 75px;
+}
+header h2 {
+  padding-top: 10px;
+}
+header nav {
+  width: 100%;
+  background: #fff8;
+}
+header nav a {
+  display: block;
+  padding: 5px 10px;
+  color: #444;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+header nav a:hover {
+  background: #fffa;
+  text-decoration: none;
+}
+header nav .active, header nav .active:hover {
+  background: #fff;
+}
+
+
+
+/* FOOTER */
+footer {
+  background: url('../img/bg-leaves.jpg') center / cover no-repeat;
+  color: #ddd;
+}
+footer div {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+footer img {
+  width: 40px;
+  height: auto;
+}
+
+
+
+/* MAIN */
+main {
+  text-align: justify;
+  padding: 30px 0;
+}
+main h2 {
+  margin-top: 20px;
+}
+
+
+
+/* PAGE : Présentation Générale */
+.section-about img {
+  display: block;
+  margin: auto;
+  width: 80%;
+  max-width: 250px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 0 20px #444;
+}
+.section-about strong {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
+
+/* PAGE : Compétences */
+.section-skills h3, .section-skills h4 {
+  text-align: center;
+  padding-top: 20px;
+}
+.section-skills img {
+  height: 100px;
+  max-width: 130px;
+  margin: 5px;
+}
+.section-skills .section-skills-lang img {
+  height: auto;
+}
+/* Fix des dimensions des logos Symfony et Bootstrap... */
+.section-skills img[alt="Symfony"],
+.section-skills img[alt="Bootstrap"] {
+  width: auto;
+}
+.section-skills ul {
+  list-style: none;
+  padding-left: 0;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.section-skills-sans-legende {
+  padding: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #bbb;
+
+  background: #fff;
+}
+.section-skills-avec-legende li {
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  width: 230px;
+
+  border-radius: 10px;
+  box-shadow: 0 0 20px #bbb;
+
+  background: #fff;
+}
+.section-skills-avec-legende li p {
+  margin: 0;
+}
+.section-skills-web-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.section-skills-web-wrapper li {
+  margin: 0 30px;
+}
+.section-skills>div {
+  background: #f4f2f3;
+  padding: 10px 30px;
+  margin-top: 30px;
+  box-shadow: inset 0 0 20px #bbb;
+}
+
+
+
+/* PAGE : Réalisations / Portfolio */
+.section-portfolio-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.section-portfolio-wrapper figure {
+  position: relative; /*pour la figcaption en absolute */
+  margin: 10px;
+  box-shadow: 0 0 10px #888;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.section-portfolio-wrapper figure:hover {
+  transform: scale(1.05);
+}
+.section-portfolio-wrapper img {
+  max-width: 340px;
+  vertical-align: middle;
+}
+.section-portfolio-wrapper figcaption {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  left: 5px;
+  bottom: 20px;
+  padding: 10px 30px;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+}
+/* Pour avoir un effet "penché" de la figcaption : */
+.section-portfolio-wrapper figcaption::before {
+  content: " ";
+  background: #333c;
+  position: absolute;
+  top:0;
+  left:-10px;
+  right:-10px;
+  bottom:0;
+  z-index: -1;
+  transform: skewX(-25deg);
+  box-shadow: 0 0 10px #666;
+}
+
+/* Partie "Focus sur une réalisation" */
+.section-portfolio-focus {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  padding: 20px;
+  background: #000000e8;
+  color: #fff;
+  overflow-x: scroll;
+}
+.section-portfolio-focus h2 {
+  margin: 0;
+  padding: 20px 0 40px 0;
+  text-align: center;
+  color: #69ce87;
+}
+.section-portfolio-focus .slider {
+  position: relative;
+  margin: auto;
+  max-width: 800px;
+}
+.section-portfolio-focus .fas {
+  position: absolute;
+  z-index: 300;
+  font-size: 2em;
+  color: #fff5;
+  transition: all 0.3s;
+}
+.section-portfolio-focus .fas:hover {
+  color: #fff;
+  cursor: pointer;
+}
+.section-portfolio-focus .fa-times-circle {
+  top: 0;
+  right: 0;
+  display: block;
+  padding: 30px
+}
+.section-portfolio-focus  .fa-chevron-circle-left, .section-portfolio-focus  .fa-chevron-circle-right {
+  top: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  padding: 10px;
+}
+.section-portfolio-focus  .fa-chevron-circle-left {
+  left: 0;
+  justify-content: flex-start;
+}
+.section-portfolio-focus  .fa-chevron-circle-right {
+  right: 0;
+  justify-content: flex-end;
+}
+.section-portfolio-focus .categories {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.section-portfolio-focus .categories p {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px #fffa;
+}
+.section-portfolio-focus a {
+  color: #fff;
+  margin: 40px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+/* PAGE : Contact */
+.section-contact {
+  text-align: center;
+}
+.section-contact input, .section-contact textarea {
+  display: block;
+  padding: 18px 15px 18px 60px;
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #aaa;
+  /* Logos en background : */
+  background-repeat: no-repeat;
+  background-size: 40px;
+}
+.section-contact textarea {
+  height: 20em;
+  line-height: 1.6em;
+  resize: none;
+}
+.section-contact input[name="contact-name"] {
+  background-position: 10px 50%;
+  background-image: url(../img/contact/name.svg);
+}
+.section-contact input[name="contact-email"] {
+  background-position: 10px 50%;
+  background-image: url(../img/contact/email.svg);
+}
+.section-contact textarea[name="contact-message"] {
+  background-position: 10px 10px;
+  background-image: url(../img/contact/message.svg);
+}
+
+
+/* PAGE : Login */
+.login-form {
+  text-align: center;
+}
+.login-form label {
+  display: none;
+}
+.login-form input {
+  display: block;
+  padding: 18px 15px;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 0 10px #aaa;
+}
+
+
+
+/* -------------------------------------------*/
+/*      RESPONSIVE : TABLETTES & DESKTOP      */
+/* -------------------------------------------*/
+@media screen and (min-width: 500px) {
+  /* HEADER */
+  header {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .header-wrapper img {
+    margin-right: 30px;
+  }
+  .header-wrapper .titles {
+    text-align: left;
+  }
+  header nav {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+  }
+  header nav a {
+    width: 25%;
+  }
+
+  /* PAGE : Présentation Générale */
+  .section-about img {
+    float: left;
+    margin-right: 30px;
+    width: 50%;
+    max-width: 250px;
+  }
+
+  /* STICKY FOOTER */
+  html, body {
+    min-height: 100vh;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    flex: 1 0 auto;
+  }
+  header, footer {
+    flex-shrink: 0;
+  }
+
+}
+
+
+/* -------------------------------------------*/
+/*          RESPONSIVE : BIG SCREENS          */
+/* -------------------------------------------*/
+@media screen and (min-width: 1000px) {
+  /* PAGE : REALISATIONS/PORTFOLIO */
+  .section-portfolio-focus .slider {
+    float: left;
+    max-width: 50%;
+    margin: 25px;
+  }
+}
