@@ -31,3 +31,14 @@ Additional features to implement:
 
 For the V3 of the Portfolio:
 * Use and learn a PHP framework such as Symfony or Laravel
+
+
+
+
+* Une autre puce
+
+`* Une sous-puce`
+
+`* Une autre sous-puce`
+
+* Et encore une autre puce !
