@@ -2,10 +2,11 @@
 Building my portfolio.
 
 The portfolio is available online at this address : http://romainsire.com  
-Please consider that I'm a beginner developper, so if you notice a security breach, please feel free to report it or even correct it here on GitHub! :-)
+Please consider that I'm a beginner developper, so if you notice a security breach, please feel free to report it or even correct it here on GitHub!  :smiley:
 
 ## Context
-I builded my portfolio after a 3 month training at 3W Academy school (https://3wa.fr/) The portfolio is the last step to walidate this 3 month training.  
+I builded my portfolio after a 3 month training at 3W Academy school (https://3wa.fr/)  
+The portfolio is the last step to walidate this 3 month training.  
 I was working at my engineering job while I was building the Portfolio on my free time. That's why it took a while..
 
 ## About the code
@@ -15,10 +16,10 @@ The Portfolio has a fairly large "admin" section, much bigger than the "public" 
 ## What's next? Many things!  
 For the V2 of the Portfolio:  
 * Better code organization, including:
- `* Use a router (AltoRouter may be a good option)  
- `* Use an autoloader and namespaces
- `* A 3public" folder which will be the only one reachable from outside
- `* more "object" oriented: "models", etc.
+ `* Use a router (AltoRouter may be a good option)`
+ `* Use an autoloader and namespaces`
+ `* A 3public" folder which will be the only one reachable from outside`
+ `* more "object" oriented: "models", etc.`
 * SSH certification for a https website
 
 Additional features to implement:
