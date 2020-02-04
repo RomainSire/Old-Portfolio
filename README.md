@@ -15,12 +15,13 @@ The Portfolio has a fairly large "admin" section, much bigger than the "public" 
 
 ## What's next? Many things!  
 For the V2 of the Portfolio:  
-* Better code organization, including:
- `* Use a router (AltoRouter may be a good option)`
- `* Use an autoloader and namespaces`
- `* A 3public" folder which will be the only one reachable from outside`
- `* more "object" oriented: "models", etc.`
 * SSH certification for a https website
+* Better code organization, including:
+  - Use a router (AltoRouter may be a good option)  
+  - Use an autoloader and namespaces  
+  - A 3public" folder which will be the only one reachable from outside  
+  - more "object" oriented: "models", etc.  
+
 
 Additional features to implement:
 * Sort realisation by category on the public "realisations" page
@@ -31,14 +32,3 @@ Additional features to implement:
 
 For the V3 of the Portfolio:
 * Use and learn a PHP framework such as Symfony or Laravel
-
-
-
-
-* Une autre puce
-
-`* Une sous-puce`
-
-`* Une autre sous-puce`
-
-* Et encore une autre puce !
