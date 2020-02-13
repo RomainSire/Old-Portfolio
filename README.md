@@ -6,12 +6,12 @@ Please consider that I'm a beginner developper, so if you notice a security brea
 
 ## Context
 I builded my portfolio after a 3 month training at 3W Academy school (https://3wa.fr/)  
-The portfolio is the last step to walidate this 3 month training.  
+The portfolio is the last step to validate this 3 month training.  
 I was working at my engineering job while I was building the Portfolio on my free time. That's why it took a while..
 
 ## About the code
 Purposely, I didn't use any framework for this project. As a consequence the code is not the cleanest nor the most organised, but I did my best to keep it easily understandable.  
-The Portfolio has a fairly large "admin" section, much bigger than the "public" section.. which is very frustrating because I'm theoretically the only one to have access to it!!
+The Portfolio has a fairly large "admin" section, much bigger than the "public" section.. which is very frustrating because I'm theoretically the only one to have access to it!
 
 ## What's next? Many things!  
 For the V2 of the Portfolio:  
