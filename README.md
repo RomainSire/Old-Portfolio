@@ -15,7 +15,6 @@ The Portfolio has a fairly large "admin" section, much bigger than the "public" 
 
 ## What's next? Many things!  
 For the V2 of the Portfolio:  
-* SSH certification for a https website
 * Better code organization, including:
   - Use a router (AltoRouter may be a good option)  
   - Use an autoloader and namespaces  
@@ -29,6 +28,7 @@ Additional features to implement:
 * Update of the pdf CV on the admin section
 * Implement a admin dashboard, with many useful stats (visit counter, etc.)
 * Thumbnail feature for the images (too slow at the moment)
+* SSL certification for a https website. Currently enabled but not working
 
 For the V3 of the Portfolio:
 * Use and learn a PHP framework such as Symfony or Laravel
