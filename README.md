@@ -28,7 +28,7 @@ Additional features to implement:
 * Update of the pdf CV on the admin section
 * Implement a admin dashboard, with many useful stats (visit counter, etc.)
 * Thumbnail feature for the images (too slow at the moment)
-* SSL certification for a https website. Currently enabled but not working
+* SSL certification for a https website. Currently enabled but not working (CSS & JavaScript not loaded..)
 
 For the V3 of the Portfolio:
 * Use and learn a PHP framework such as Symfony or Laravel
