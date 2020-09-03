@@ -1,6 +1,8 @@
 # Portfolio
 Building my portfolio.
 
+> :warning: Update on September 2020: My portfolio is now offline. I'm considering to build a new one with NodeJS instead of PHP. So I'll have to change my hosting service anyway!
+
 The portfolio is available online at this address : http://romainsire.com  
 Please consider that I'm a beginner developper, so if you notice a security breach, please feel free to report it or even correct it here on GitHub!
 
